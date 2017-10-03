@@ -1,0 +1,49 @@
+<head>
+  <title>Product Details</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <ul class="nav-item">
+<li>  <h3 style="color:green;font-family:monotype-corsiva;">Please Add Product Details</h3></li>
+<li><a class="waves-effect waves-light btn modal-trigger" href="#addModal1">Add Product Details</a></li>
+  </ul>
+  <ul class="collection">
+  {{#each notes1}}
+  {{> note1}}
+  {{/each}}
+</ul>
+</div>
+
+{{> add1}}
+
+<script>
+$(document).ready(function(){
+  $('.modal').modal();
+  });
+
+</script>
+
+</body>
+
+
+<template name="note1">
+  <li class="collection-item">
+    {{items}}
+    <a href="#" class="delete-note secondary-content"><i class="material-icons">close</i></a>
+  </li>
+</template>
+
+
+<template name="add1">
+  <!-- Modal Structure -->
+  <div id="addModal1" class="modal">
+    <div class="modal-content">
+      <h3>Add Product Details</h3>
+      <form class="add-form">
+        <input type="text" name="items" placeholder="Add Product Details..">
+      </form>
+    </div>
+
+  </div>
+</template>
